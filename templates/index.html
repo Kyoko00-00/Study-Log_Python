@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>FE学習ログ</title>
+</head>
+<body>
+    <div class="main-card">
+        <header>
+            <h1>FE試験 突破トラッカー</h1>
+            <div class="countdown">
+                試験（{{ exam_date }}）まで あと <span>{{ days_left }}</span> 日
+            </div>
+        </header>
+
+        <section class="form-section">
+            <form action="/add" method="POST">
+                <select name="subject" required>
+                    <option value="">科目を選択</option>
+                    <option value="科目A (理論/アルゴリズム)">科目A (理論/アルゴリズム)</option>
+                    <option value="科目B (プログラミング)">科目B (プログラミング)</option>
+                    <option value="マネジメント/戦略">マネジメント/戦略</option>
+                </select>
+                <input type="number" name="hours" step="0.5" placeholder="時間 (h)" required>
+                <input type="text" name="memo" placeholder="今日学んだこと（一言）">
+                <button type="submit">記録する</button>
+            </form>
+        </section>
+
+        <section class="log-section">
+            <h2>最近の学習記録</h2>
+            <ul>
+                {% for log in logs %}
+                <li>
+                    <span class="log-date">{{ log.date }}</span>
+                    <span class="log-subject">{{ log.subject }}</span>
+                    <span class="log-hours">{{ log.hours }}h</span>
+                    <p class="log-memo">{{ log.memo }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
