@@ -2,25 +2,38 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>FE学習ログ</title>
+    <title>Java Silver学習ログ</title>
 </head>
 <body>
     <div class="main-card">
         <header>
-            <h1>FE試験 突破トラッカー</h1>
+            <h1>Java Silver 突破トラッカー</h1>
             <div class="countdown">
                 試験（{{ exam_date }}）まで あと <span>{{ days_left }}</span> 日
             </div>
+
+            <details class="config-section">
+                <summary>試験日を設定する</summary>
+                <form action="/update_config" method="POST" class="inline-form">
+                    <input type="date" name="exam_date" value="{{ exam_date }}" required>
+                    <button type="submit" class="btn-small">更新</button>
+                </form>
+            </details>
         </header>
 
         <section class="form-section">
             <form action="/add" method="POST">
                 <select name="subject" required>
-                    <option value="">科目を選択</option>
-                    <option value="科目A (理論/アルゴリズム)">科目A (理論/アルゴリズム)</option>
-                    <option value="科目B (プログラミング)">科目B (プログラミング)</option>
-                    <option value="マネジメント/戦略">マネジメント/戦略</option>
+                    <option value="">Java Silver 科目を選択</option>
+                    <option value="Javaの基本">Javaの基本（型・変数・演算子）</option>
+                    <option value="制御構造">制御構造（if・for・while）</option>
+                    <option value="配列">配列の操作</option>
+                    <option value="メソッド">インスタンスとメソッド（基本）</option>
+                    <option value="継承">クラスの継承・インターフェース</option>
+                    <option value="例外">例外処理</option>
+                    <option value="ラムダ/API">ラムダ式・API（List/Map）</option>
                 </select>
                 <input type="number" name="hours" step="0.5" placeholder="時間 (h)" required>
                 <input type="text" name="memo" placeholder="今日学んだこと（一言）">

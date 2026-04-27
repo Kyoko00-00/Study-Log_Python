@@ -1,20 +1,128 @@
-:root { --primary: #2c3e50; --accent: #e74c3c; --bg: #f8f9fa; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); margin: 0; padding: 20px; }
-.main-card { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+:root {
+    --primary: #2c3e50;
+    --accent: #e74c3c;
+    --bg: #f8f9fa;
+}
 
-header { text-align: center; border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
-h1 { color: var(--primary); margin: 0; }
-.countdown { font-size: 1.2rem; margin-top: 10px; }
-.countdown span { font-size: 2rem; font-weight: bold; color: var(--accent); }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 20px;
+}
 
-form { display: flex; flex-direction: column; gap: 10px; }
-select, input, button { padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem; }
-button { background: var(--primary); color: white; border: none; cursor: pointer; transition: 0.3s; }
-button:hover { background: #34495e; }
+.main-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-ul { list-style: none; padding: 0; }
-li { padding: 15px; border-left: 5px solid var(--primary); background: #fdfdfd; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.log-date { font-size: 0.8rem; color: #888; display: block; }
-.log-subject { font-weight: bold; color: var(--primary); }
-.log-hours { float: right; font-weight: bold; color: var(--accent); }
-.log-memo { margin: 5px 0 0 0; font-size: 0.9rem; }
+header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary);
+    margin: 0;
+}
+
+.countdown {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.countdown span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+/* 試験日設定フォームのスタイル */
+.config-section {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.config-section summary {
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.inline-form {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-small {
+    padding: 5px 10px !important;
+    font-size: 0.8rem !important;
+    width: auto !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+select, input, button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #34495e;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    border-left: 5px solid var(--primary);
+    background: #fdfdfd;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.log-date {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+}
+
+.log-subject {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.log-hours {
+    float: right;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.log-memo {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+}
